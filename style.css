@@ -1,0 +1,30 @@
+body{
+	margin: auto;
+}
+
+.grid_cell_container{
+	width: 50%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 120px);
+	grid-template-rows: repeat(3, 120px);
+}
+
+.grid_cell{
+	
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	font-size: 50px;
+	justify-content: center;
+	/* background-origin: border-box; */
+	background-image: linear-gradient(to bottom right, white, rgb(240, 240, 240),rgb(211, 211, 211));
+	/* border: 5px solid; */
+  	/* border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)); */
+	border-image-slice: 1;
+	border-radius: 24px;
+	box-shadow: 1px 2px 8px #888888;
+	background-clip: content-box, border-box;
+
+}
