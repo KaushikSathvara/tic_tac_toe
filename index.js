@@ -1,15 +1,14 @@
 
 console.log("SCRIPT LOADED SUCCESS>.");
 
-var myX = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9302 2.06976L8 8M2.06976 13.9302L8 8M8 8L13.9302 13.9302M8 8L2.06976 2.06976" stroke="#1E5944" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-var myO = '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="13.5" stroke="#1E5944" stroke-width="3"/></svg>';
+var myX = '<svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M41.1039 2L21.5519 21.552M1.99994 41.104L21.5519 21.552M21.5519 21.552L41.1039 41.104M21.5519 21.552L1.99994 2" stroke="#303030" stroke-opacity="0.52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var myO = '<svg width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30.0011" cy="29.2612" r="27.7176" stroke="#303030" stroke-opacity="0.52" stroke-width="3"/></svg>';
 
 
 var players = [{value:"X", sign:myX}, {value:"O",sign:myO}]
-var winningCondition = [["0", '0', '0']]
-var defaultBoard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] //2
+var defaultBoard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 var elementList = []
-var totalGrid = 3 * 3
+var totalGrid = 9
 var flagger = 0
 var winner = ''
 var playerSwitch = false
@@ -60,24 +59,24 @@ var reset_game = () => {
 
 }
 
-var cleanup = (resultString) => {
+var cleanup = (tie) => {
     if (elementList.length > 0) {
         elementList.forEach((e) => {
             e.onclick = () => { }
         })
     }
-    result.innerHTML = resultString
-    console.log(currentPlayer.value);
-    if(currentPlayer.value == "X") {
-        scoreBoard.player_x += 1
-        console.log(scoreBoard.player_x);
-        player_x.innerHTML = scoreBoard.player_x
+    if(!tie){
+        
+        if(currentPlayer.value == "X") {
+            scoreBoard.player_x += 1
+            console.log(scoreBoard.player_x);
+            player_x.innerHTML = scoreBoard.player_x
+        }
+        if(currentPlayer.value == "O") {
+            scoreBoard.player_o += 1
+            player_o.innerHTML = scoreBoard.player_o
+        }
     }
-    if(currentPlayer.value == "O") {
-        scoreBoard.player_o += 1
-        player_o.innerHTML = scoreBoard.player_o
-    }
-    // document.getElementById('result').appendChild(result)
 }
 
 
@@ -99,7 +98,7 @@ var checkIfWinner = () => {
         cleanup("Winner is " + currentPlayer.value)
     } else {
         if (flagger == totalGrid) {
-            cleanup("GAME IS Tie")
+            cleanup(tie=true)
         }
     }
     return false

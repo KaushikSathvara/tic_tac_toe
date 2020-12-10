@@ -19,7 +19,7 @@
 
   <body>
     <div class="container-fluid root-div">
-      <div class="col-sm-12">
+      <div class="  ">
         <div
           class="header align-self-center d-flex justify-content-center align-content-center flex-column"
         >
@@ -36,7 +36,7 @@
             >
               <path
                 d="M20.9302 9.06976L15 15M9.06976 20.9302L15 15M15 15L20.9302 20.9302M15 15L9.06976 9.06976"
-                stroke="#1E5944"
+                stroke="#000000"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -45,7 +45,7 @@
                 cx="15"
                 cy="15"
                 r="13.5"
-                stroke="#1E5944"
+                stroke="#000000"
                 stroke-width="3"
               />
             </svg>
@@ -60,7 +60,7 @@
             >
               <path
                 d="M20.9302 9.06976L15 15M9.06976 20.9302L15 15M15 15L20.9302 20.9302M15 15L9.06976 9.06976"
-                stroke="#1E5944"
+                stroke="#000000"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -69,7 +69,7 @@
                 cx="15"
                 cy="15"
                 r="13.5"
-                stroke="#1E5944"
+                stroke="#000000"
                 stroke-width="3"
               />
             </svg>
@@ -135,12 +135,15 @@
           <div
             class="d-flex flex-row justify-content-between align-content-between"
           >
-            <div class="btn btn-info mx-0" id="restart_btn">Restart</div>
-            <div class="btn btn-danger mx-2" id="reset_btn">Reset</div>
+            <div class="btn btn-info mx-0 disabled grayscaled" id="restart_btn">
+              Restart
+            </div>
+            <div class="btn btn-danger mx-2 disabled grayscaled" id="reset_btn">Reset</div>
           </div>
         </div>
       </div>
-      <div class="row footer position-absolute">
+      <div class="row footer">
+        <!-- <div class="doggy"></div> -->
         <div class="col-sm-12 d-flex justify-content-end align-content-center">
           <span class="mx-4 align-self-center"
             >Developed with ❤️ by
@@ -153,6 +156,12 @@
         </div>
       </div>
     </div>
+    <img
+      src="./assets/91ab0e9b701b8e14024770010d6d2713.png"
+      class="doggy"
+      width="257px"
+      height="257px"
+    />
   </body>
   <script src="./index.js"></script>
   <!-- Optional JavaScript -->
