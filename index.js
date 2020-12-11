@@ -45,18 +45,19 @@ var restart_game = () => {
 
 
 var reset_game = () => {
-    if (elementList.length > 0) {
-        elementList.forEach((e) => {
-            e.innerHTML = ''
-        })
-    }
+    console.log("resetting game...", elementList, elementList.length);
+    elementList.forEach((e) => {
+        e.innerHTML = ''
+        e.onclick = clickFunction
+    })
+    flagger = 0
+    defaultBoard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] //2
     scoreBoard = {
         player_x: 0,
         player_o: 0
     }
-    elementList = []
-    defaultBoard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] //2
-
+    player_x.innerHTML = "--"
+    player_o.innerHTML = "--"
 }
 
 var cleanup = (tie) => {
@@ -141,7 +142,7 @@ for (let i = 0; i < totalGrid; i++) {
     myElement.onclick = clickFunction
 }
 restart_btn.onclick = restart_game;
-// reset_btn.onclick = reset_game;
+reset_btn.onclick = reset_game;
 
 
 
