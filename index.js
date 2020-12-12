@@ -143,8 +143,9 @@ function clickFunction(e) {
 }
 
 function playsound(melody) {
-  var path = "./assets/sounds/";
-  var snd = new Audio(path + melody + ".WAV");
+  var path =
+    "https://raw.githubusercontent.com/KaushikSathvara/tic_tac_toe/ui-update/assets/sounds/";
+  var snd = new Audio(path + melody + ".wav");
   snd.play();
 }
 
