@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 body {
   margin: auto 0px;
 }
@@ -156,4 +158,37 @@ body {
   bottom: 30px;
   right: 0px;
   z-index: 999;
+}
+
+#restart_btn {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background: #ddfdff;
+  border-radius: 50%;
+  filter: drop-shadow(0px 2px 6px rgba(48, 48, 48, 0.3));
+}
+
+.vl {
+  border-left: 1px solid #1e5944;
+  height: 24px;
+  margin: 0 12px;
+}
+
+#reset_btn {
+  cursor: pointer;
+  width: 64px;
+  height: 24px;
+  background: #ddfdff;
+  border-radius: 4px;
+  filter: drop-shadow(0px 2px 6px rgba(48, 48, 48, 0.3));
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  color: #818181;
+
+  text-align: center;
 }
