@@ -11,6 +11,8 @@ body {
   top: 0%;
   bottom: 0%;
   background-image: linear-gradient(180deg, #86eac6 0%, #ffffff 75.29%);
+  display: flex;
+  flex-direction: column;
 }
 .header {
   margin-top: 35px;
@@ -49,11 +51,11 @@ body {
   margin-top: 50px !important;
 }
 
-.grid_cell_container {
+.cell-container {
   display: grid;
   grid-template-columns: repeat(3, 118px);
   justify-content: center;
-  align-content: center;
+  /* align-content: center; */
   grid-template-rows: repeat(3, 118px);
   /* box-shadow: -3px 5px 64px 0px #00587D 44%; */
 
@@ -142,10 +144,9 @@ body {
   color: #1e5944;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* right: 0; */
   height: 80px;
   background: #3cdda3;
   box-shadow: 0px -4px 64px rgba(0, 0, 0, 0.25);
@@ -191,4 +192,22 @@ body {
   letter-spacing: 0em;
   color: #818181;
   text-align: center;
+}
+
+.tic_sign{
+  animation: fadeIn 1s;
+  animation-fill-mode: backwards;
+}
+@keyframes fadeIn{
+  from {opacity:  0;}
+  to {opacity: 1;}
+
+}
+
+@media screen and (max-width: 531px) {
+    .main-content { display: flex; flex-flow: column;justify-content: center;align-items: center; }
+    .scoreboard { order: 2;  margin-top: 60px !important;}
+    .cell-container { order: 3; margin-top: 60px !important;}
+    .ruleboard { order:  1;  display: flex; justify-content: center; align-items: center; }
+    .doggy {display: none;}
 }
