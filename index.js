@@ -146,9 +146,10 @@ var reset_game = () => {
 };
 
 
-document.querySelectorAll('.grid_cell').forEach(cell => {
-  elementList.push(cell);
-  cell.addEventListener('click', clickFunction);
-});
+for (let i = 0; i < totalGrid; i++) {
+  var myElement = document.getElementById(i.toString());
+  elementList[i] = myElement;
+  myElement.onclick = clickFunction;
+}
 document.querySelector('#restart_btn').addEventListener('click', restart_game);
 document.querySelector('#reset_btn').addEventListener('click', reset_game);
